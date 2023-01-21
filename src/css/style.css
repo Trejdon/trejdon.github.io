@@ -1,15 +1,14 @@
 /* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
 :root {
-    --blackish: #162E25;
-    --grey: #665F5E;
-    --orange: #FFB041;
-    --hotpink: #fa37fd;
-    --pink: #FE8CFF;
-    --teal: #54EAE8;
-    --white: #f7f8fa;
+    --blackish: #2E3233;
+    --light-grey: #E2E3DF;
+    --charcoal: #515B5E;
+    --bright-green: #44ff00;
+    --lime: #CAF200;
+    --white: #FFFEFC;
     --font-size: 1.3rem;
     --font-size-large: 4rem;
-    --mono: "Roboto Mono", monospace;
+    --mono: "Cutive Mono", monospace;
     --sans: "Rubik", sans-serif;
 }
 
@@ -38,12 +37,14 @@ h1, h2, h3 {
 }
 
 a {
-    color: var(--hotpink);
+    color: var(--lime);
 }
+
 a:hover {
-    color: var(--pink);
+    color: var(--bright-green);
     text-decoration: none;
 }
+
 
 /* Neat trick to ensure the image always takes up full container space */
 img {
@@ -54,7 +55,7 @@ img {
 
 /* Intro styles */
 #intro {
-    padding-bottom: 4rem 1rem 10rem 1rem;
+    padding: 4rem 1rem 8rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -68,31 +69,39 @@ img {
 #intro h2 {
     font-size: var(--font-size-large);
     font-weight: normal;
+    color: var(--charcoal);
+    filter: brightness(200%);
 }
 
 #intro .name {
     font-family: var(--mono);
+    font-size: 90%;
+    color: var(--lime)
 }
 
 .name span {
     font-family: var(--sans);
     font-size: var(--font-size-large);
     font-weight: bold;
-    color: var(--orange);
+    color: var(--bright-green);
     display: block;
 }
 
 /* Contact styles */
 #contact {
     padding: 3rem 0;
-    background-color: var(--teal);
-    color: var(--blackish);
+    background-color: var(--blackish);
+    color: var(--white);
 }
 
 #contact div {
     width: 400px;
     text-align: center;
     margin: 0 auto;
+}
+
+#contact h2 {
+    color: var(--lime)
 }
 
 #contact p {
@@ -104,25 +113,18 @@ img {
     padding-top: 2rem;
 }
 
-#contact .button-orange {
+#contact .button {
     margin: 0 auto;
     width: 40%;
-    background-color: var(--orange);
-    color: var(--blackish);
     padding: .5rem;
     border-radius: 5px;
     text-decoration: none;
 }
 
-#contact .button-orange:hover {
-    background-color: var(--hotpink);
-    color: var(--white);
-}
-
 nav {
     font-family: var(--mono);
     /* Nice trick to proportionally shrink the entire set of sizes */
-    font-size: 80%;
+    font-size: 85%;
     padding: 1rem;
 }
 
@@ -159,38 +161,66 @@ nav a {
     */
     display: block;
 }
+
 nav a:hover,
 nav [class*="fa-"]:hover {
-    color: var(--orange)
+    color: var(--lime)
+}
+
+#logo #logo-name {
+    color: transparent;
+    background: linear-gradient(155deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 50%, rgba(248,252,69,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+nav #logo #logo-dragon {
+    color: var(--bright-green)
+}
+
+nav #logo-name:hover {
+    background: linear-gradient(155deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 50%, rgba(248,252,69,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 nav [class*="fa-"] {
     font-size: 150%;
-    color: var(--teal)
+    color: var(--bright-green)
 }
 
 nav h1 [class*="fa-"] {
     font-size: 100%;
     padding-right: .5rem;
-    color: rgba(68, 255, 0, 0.854)
+    color: var(--bright-green)
 }
 
 .button {
-    background-color: var(--teal);
+    background-color: var(--bright-green);
     color: var(--blackish);
     padding: .5rem;
     border-radius: 5px;
 }
 
 .button:hover {
-    background-color: var(--orange);
+    background-color: var(--lime);
     color: var(--blackish);
 }
 
 footer {
-    max-width: 400px;
+    background-color: var(--charcoal);
+    padding: 1.5rem;
     text-align: center;
-    margin: 1rem auto;
+}
+
+.dark {
+    background-color: var(--blackish);
+}
+
+footer div {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 footer ul {
@@ -205,38 +235,46 @@ footer ul {
 
 footer [class*="fa-"] {
     font-size: 200%;
-    color: var(--orange)
+    color: var(--bright-green)
 }
 
 footer [class*="fa-"]:hover {
-    color: var(--teal);
+    color: var(--lime);
+}
+
+footer h2 span {
+    color: var(--bright-green);
 }
 
 .gradient {
     height: .5rem;
-    background: rgb(255,176,65);
-    background: linear-gradient(90deg, rgba(255,176,65,1) 0%, rgba(250,55,253,1) 100%);     
+    background: linear-gradient(90deg, rgba(68,255,0,1) 0%, rgba(202,242,0,1) 50%, rgba(68,255,0,1) 100%);
 }
 
 #projects {
-    background-color: var(--grey);
+    background-color: var(--charcoal);
     padding: 4rem 1rem;
 }
 
 #projects h2 {
     font-size: 2.5rem;
     margin-bottom: calc(2.5rem * 1.5);
+    color: var(--lime);
 }
 
 #projects h3 {
-    color: var(--orange)
+    color: var(--bright-green)
 }
 
 #projects h4 {
-    color: var(--teal);
+    color: var(--white);
     font-size: 1rem;
     font-family: var(--mono);
     margin: 0;
+}
+
+#projects ul {
+    color: var(--lime);
 }
 
 
@@ -267,8 +305,8 @@ footer [class*="fa-"]:hover {
 
 #projects img {
     margin: 2rem 0 4rem 0;
-    border-left: 1px solid var(--orange);
-    border-top: 1px solid var(--orange);
+    border-left: 1px solid var(--bright-green);
+    border-top: 1px solid var(--bright-green);
     border-radius: 25px;
     padding: 1rem;
 }
