@@ -1,0 +1,348 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+    --blackish: #2E3233;
+    --light-grey: #E2E3DF;
+    --charcoal: #515B5E;
+    --bright-green: #44ff00;
+    --lime: #CAF200;
+    --white: #FFFEFC;
+    --font-size: 1.3rem;
+    --font-size-large: 4rem;
+    --mono: "Cutive Mono", monospace;
+    --sans: "Rubik", sans-serif;
+}
+
+/* Full page styles, apply defaults to everything first */
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--blackish);
+    color: var(--white);
+    font-size: var(--font-size);
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+a {
+    color: var(--lime);
+}
+
+a:hover {
+    color: var(--bright-green);
+    text-decoration: none;
+}
+
+
+/* Neat trick to ensure the image always takes up full container space */
+img {
+    width: 100%;
+    max-height: 75%;
+}
+/* End full page styles */
+
+/* Intro styles */
+#intro {
+    padding: 4rem 1rem 8rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#intro p {
+    font-size: 1rem;
+    /* Using a unit with line-height is a common mistake, no unit is proportional to the font-size */
+    line-height: 1.5;
+}
+
+#intro h2 {
+    font-size: var(--font-size-large);
+    font-weight: normal;
+    color: var(--charcoal);
+    filter: brightness(200%);
+}
+
+#intro .name {
+    font-family: var(--mono);
+    font-size: 90%;
+    color: var(--lime)
+}
+
+.name span {
+    font-family: var(--sans);
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    color: var(--bright-green);
+    display: block;
+}
+
+/* Contact styles */
+#contact {
+    padding: 3rem 0;
+    background-color: var(--blackish);
+    color: var(--white);
+}
+
+#contact div {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    color: var(--lime)
+}
+
+#contact p {
+    margin-bottom: 3rem;
+}
+
+#contact a {
+    display: block;
+    padding-top: 2rem;
+}
+
+#contact .button {
+    margin: 0 auto;
+    width: 40%;
+    padding: .5rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+nav {
+    font-family: var(--mono);
+    /* Nice trick to proportionally shrink the entire set of sizes */
+    font-size: 85%;
+    padding: 1rem;
+}
+
+nav h1 a {
+    font-family: var(--sans);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+        /* The three most important flex properties */
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /* Assigns a nice space in all elements */
+    gap: 2rem;
+}
+
+nav li:first-child {
+    /* Flex basis makes this take 100% of the width of the container */
+    flex-basis: 100%;
+    text-align: center;
+    /* Debugging trick, throw a border on it! */
+    /* border: 1px solid red; */
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    /* Normally a elements are spans, but for a nav
+        making them blocks work for a better UX
+    */
+    display: block;
+}
+
+nav a:hover,
+nav [class*="fa-"]:hover {
+    color: var(--lime)
+}
+
+#logo #logo-name {
+    color: transparent;
+    background: linear-gradient(155deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 50%, rgba(248,252,69,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+nav #logo #logo-dragon {
+    color: var(--bright-green)
+}
+
+nav #logo-name:hover {
+    background: linear-gradient(155deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 50%, rgba(248,252,69,1) 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+nav [class*="fa-"] {
+    font-size: 150%;
+    color: var(--bright-green)
+}
+
+nav h1 [class*="fa-"] {
+    font-size: 100%;
+    padding-right: .5rem;
+    color: var(--bright-green)
+}
+
+.button {
+    background-color: var(--bright-green);
+    color: var(--blackish);
+    padding: .5rem;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: var(--lime);
+    color: var(--blackish);
+}
+
+footer {
+    background-color: var(--charcoal);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.dark {
+    background-color: var(--blackish);
+}
+
+footer div {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+footer [class*="fa-"] {
+    font-size: 200%;
+    color: var(--bright-green)
+}
+
+footer [class*="fa-"]:hover {
+    color: var(--lime);
+}
+
+footer h2 span {
+    color: var(--bright-green);
+}
+
+.gradient {
+    height: .5rem;
+    background: linear-gradient(90deg, rgba(68,255,0,1) 0%, rgba(202,242,0,1) 50%, rgba(68,255,0,1) 100%);
+}
+
+#projects {
+    background-color: var(--charcoal);
+    padding: 4rem 1rem;
+}
+
+#projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: calc(2.5rem * 1.5);
+    color: var(--lime);
+}
+
+#projects h3 {
+    color: var(--bright-green)
+}
+
+#projects h4 {
+    color: var(--white);
+    font-size: 1rem;
+    font-family: var(--mono);
+    margin: 0;
+}
+
+#projects ul {
+    color: var(--lime);
+}
+
+
+#projects div {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blackbox {
+    background-color: var(--blackish);
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: 1rem;
+
+}
+
+#projects img {
+    margin: 2rem 0 4rem 0;
+    border-left: 1px solid var(--bright-green);
+    border-top: 1px solid var(--bright-green);
+    border-radius: 25px;
+    padding: 1rem;
+}
+
+@media (min-width: 550px) {
+    article {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1rem;
+    }
+
+    #projects img {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+
+    .text-container {
+        grid-column: 5/11;
+        grid-row: 1/2;
+        order: 2;
+        text-align: right;
+    }
+
+    #projects ul {
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 810px) {
+    nav {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    nav li:first-child {
+        flex-basis: auto;
+        text-align: left;
+        margin-right: auto;
+    }
+}
